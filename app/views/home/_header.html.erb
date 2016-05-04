@@ -17,13 +17,15 @@
        
         <li><%= link_to 'Strona główna', root_path %></li>
         <li><%= link_to 'O mnie', home_about_path %></li>
+        <li><%= link_to 'Lista pinów', pins_path %></li>
 
         <% if user_signed_in? %>
 	        <li><%= link_to 'Edycja profilu', edit_user_registration_path %></li>
+	        <li><%= link_to 'Nowy pin', new_pin_path %></li>
 	        <li><%= link_to 'Wylogowanie', destroy_user_session_path %></li>
 	    <% else %>
 	    	<li><%= link_to 'Logowanie', new_user_session_path %></li>
-	        <li><%= link_to 'WRejestracja', new_user_registration_path %></li>
+	        <li><%= link_to 'Rejestracja', new_user_registration_path %></li>
 	    <% end %>
 	    </ul>
 	 </div>
