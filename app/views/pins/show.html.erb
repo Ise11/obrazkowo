@@ -5,7 +5,16 @@
 			<div class="panel-heading center"><%= image_tag @pin.image.url(:medium) %><br/>
 				<div class="panel-body">
 					<%= @pin.description %></br>
-					<br/><%= @pin.user.name %>
+					<%= @pin.user.name %><br/>
+					<div id="comments">
+					    <h2>
+					      <%= @pin.comments.count %>
+					      Comments
+					    </h2>
+					    <%= render @pin.comments %>
+					    <h3>Reply to thread</h3>
+					    <%= render "comments/form" %>
+					  </div>
 					<% if @pin.user == current_user %>
 					<%= link_to 'Edycja', edit_pin_path(@pin) %> |
 					<% end %>
@@ -14,3 +23,9 @@
 			</div>
 		</div>
 	</div>
+</div>
+
+
+
+
+

@@ -15,6 +15,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'will_paginate', '~> 3.0.7'
 gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
+gem 'simple_form', '~> 3.2', '>= 3.2.1'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
