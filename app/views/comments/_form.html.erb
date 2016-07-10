@@ -1,4 +1,6 @@
 <%= simple_form_for([@pin, @pin.comments.build]) do |f| %>
+<div class = "comment">
   <%= f.input :comment %>
-  <%= f.submit %>
+</div>
+  <%= f.submit "Dodaj komentarz"%>
 <% end %>

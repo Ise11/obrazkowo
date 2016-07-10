@@ -27,6 +27,12 @@
 	    	<li><%= link_to 'Logowanie', new_user_session_path %></li>
 	        <li><%= link_to 'Rejestracja', new_user_registration_path %></li>
 	    <% end %>
+        <% if current_user %>
+        <% if current_user.admin == true %>
+          <li><%= link_to 'Panel admina', rails_admin.dashboard_path %></li>
+           <% end %>
+       <% end %>
+      
 	    </ul>
 	 </div>
 	</div>

@@ -4,12 +4,14 @@
       <%= comment.comment %>
     </p>
     <p class="comment_author">
-      <%= comment.user.try(:name) %>
-      <%= comment.user.try(:email) %>
+      <b><%= comment.user.try(:name) %></b>
+      <i><%= comment.user.try(:email) %></i>
     </p>
   </div>
   <div class="buttons">
-    <%= link_to "Edit", edit_pin_comment_path(comment.pin, comment) %>
-    <%= link_to "Delete", [comment.pin, comment], method: :delete, data: { confirm: "Are you sure?" } %>
+  <% if comment.user == current_user %>
+    <%= link_to "Edytuj", edit_pin_comment_path(comment.pin, comment) %>
+    <%= link_to "Usuń", [comment.pin, comment], method: :delete, data: { confirm: "Jesteś pewien?" } %>
+  <% end %>
   </div>
 </div>
